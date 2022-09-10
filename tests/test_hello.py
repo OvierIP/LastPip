@@ -1,10 +1,10 @@
 import unittest
-from desoper import hello
+from desoper import SecondPip
 
 
 class Test_hello(unittest.TestCase):
     def test__working(self):
-        self.assertEqual(hello.hello(),
+        self.assertEqual(SecondPip.hello(),
                          'Hello, World!', True)
 
 
