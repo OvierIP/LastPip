@@ -37,7 +37,7 @@ def main():
         name="SecondPip",
 
         # Version number (initial):
-        version="0.0.1,
+        version="0.0.1",
 
         # Application author details:
         author="Ovier",
