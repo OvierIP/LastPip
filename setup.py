@@ -37,7 +37,7 @@ def main():
         name="SecondPip",
 
         # Version number (initial):
-        version="0.0.1",
+        version="0.0.1,
 
         # Application author details:
         author="Ovier",
@@ -54,9 +54,9 @@ def main():
 
         license="BSD",
 
-        description="Hello World!",
+        description="Hello World!, function exponente",
 
-        long_description=open("README.md").read(),
+        long_description=open("README.md").read(), # El Readme muestra qué paquetes instalas y los métodos dentro del paquete. Y los links sugeridos
 
         long_description_content_type="text/markdown",
 
