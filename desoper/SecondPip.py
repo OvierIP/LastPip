@@ -15,7 +15,7 @@ def exponente(m):
     return exp
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':  #En el main se guardan todas las funciones para que el programa consulte
     r'''
     Hello main
     '''
