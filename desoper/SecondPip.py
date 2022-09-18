@@ -12,7 +12,7 @@ def hello():
 
 def exponente(m):
     '''
-    La funcion da un resultado de 1 o -1
+    La funcion da un resultado de 1 o -1,prueba
     '''
     exp=(-1)**m  
     return exp
