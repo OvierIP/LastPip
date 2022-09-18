@@ -11,6 +11,9 @@ def hello():
     return 'Hello, World!'
 
 def exponente(m):
+    '''
+    La funcion da un resultado de 1 o -1
+    '''
     exp=(-1)**m  
     return exp
 
