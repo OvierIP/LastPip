@@ -54,7 +54,7 @@ def main():
 
         license="BSD",
 
-        description="Hello World!, function exponente",
+        description="Hello World!, function exponente of 1 or -1",
 
         long_description=open("README.md").read(), # El Readme muestra qué paquetes instalas y los métodos dentro del paquete. Y los links sugeridos
 
