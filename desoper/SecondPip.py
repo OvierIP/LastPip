@@ -2,7 +2,7 @@
 r'''
 SecondPip module
 '''
-pip install anomalies
+#pip install anomalies
 import numpy as np 
 import pandas as pd
 import random
