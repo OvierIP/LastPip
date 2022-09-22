@@ -84,4 +84,5 @@ if __name__ == '__main__':  #En el main se guardan todas las funciones para que 
     Hello main
     '''
     hello()
+    n = int(input("Por favor ingrese el valor de n que sea mayor que 4; "))
     
