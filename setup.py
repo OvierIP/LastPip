@@ -66,8 +66,11 @@ def main():
         install_requires=[
             'numpy==1.16.5; python_version=="3.7"',
             'numpy>=1.16.5; python_version=="3.8"',
-            'numpy>=1.16.5; python_version=="3.9"'
-        ],
+            'numpy>=1.16.5; python_version=="3.9"',
+            'anomalies>=0.2.5; python_version=="3.7"',
+            'anomalies>=0.2.5; python_version=="3.8"',
+            'anomalies>=0.2.5; python_version=="3.9"'
+        ], 
     )
 
 
