@@ -8,7 +8,7 @@ args = parser.parse_args()
                     
                     
 if __name__ == '__main__':
-  s = SecondPip.hello()
+  s = SecondPip.all_sol_for_n(n)
   if args.n:
       n = int(n)  
   print(s)
