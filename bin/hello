@@ -2,7 +2,7 @@ from desoper import SecondPip
 import argparse
 parser = argparse.ArgumentParser(
           description='Exclamative salutation to the World')
-parser.add_argument('nn',         
+parser.add_argument('n',         
                     action='store_true',
                     help='Input a n entero')
                     
@@ -11,5 +11,5 @@ args = parser.parse_args()
 if __name__ == '__main__':
   s = SecondPip.all_sol_for_n(n)
   if args.n:
-      n = int(nn)  
+      n = int(n)  
   print(s)
