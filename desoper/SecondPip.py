@@ -84,5 +84,7 @@ if __name__ == '__main__':  #En el main se guardan todas las funciones para que 
     Hello main
     '''
     hello()
-    n = int(input("Por favor ingrese el valor de n que sea mayor que 4; "))
-    
+    exponente(m)
+    exponente1(m)
+    anomalyparimpar(n)
+    all_sol_for_n(n)
