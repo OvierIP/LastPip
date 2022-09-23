@@ -8,7 +8,6 @@ args = parser.parse_args()
                     
                     
 if __name__ == '__main__':
-
   s = SecondPip.hello()
   if args.n:
       n = int(n)  
