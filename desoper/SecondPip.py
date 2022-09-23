@@ -70,14 +70,7 @@ def all_sol_for_n(n):
   final = [i for i in sol if i[0] is not None]
   return final
 
-from multiprocessing import Pool
-n = int(input("Por favor ingrese el valor de n que sea mayor que 4; "))
-resultados = Pool().map(all_sol_for_n, list(range(n,n+1)))
 
-df=pd.DataFrame(resultados)
-df=df.T
-df=df.astype(str)
-df.drop_duplicates().reset_index(drop=True)
 
 
 if __name__ == '__main__':  #En el main se guardan todas las funciones para que el programa consulte
