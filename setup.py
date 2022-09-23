@@ -51,6 +51,7 @@ def main():
 
         # Details
         url="https://https://github.com/OvierI/SecondPip",
+        scripts=['bin/hello']
 
         license="BSD",
 
