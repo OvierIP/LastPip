@@ -18,6 +18,7 @@ def hello():
     Hello function
     '''
     return 'Hello, World!'
+#m={-2,-1,0,1,2}
 
 def exponente(m):
     exp=(-1)**np.random.randint(0,2, size=m)   #la función exponente evita soluciones triviales o ceros 
