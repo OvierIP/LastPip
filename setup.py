@@ -21,7 +21,6 @@ from setuptools import setup, find_packages
 import os
 import sys
 
-
 v = sys.version_info
 
 shell = False
