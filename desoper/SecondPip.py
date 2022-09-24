@@ -18,7 +18,6 @@ def hello():
     Hello function
     '''
     return 'Hello, World!'
-#m={-2,-1,0,1,2}
 
 def exponente(m):
     exp=(-1)**np.random.randint(0,2, size=m)   #la función exponente evita soluciones triviales o ceros 
@@ -64,14 +63,6 @@ def anomalyparimpar(n): #Este método halla una solución final Z para n par o i
       return [None]
     else:
       return (np.sort(anomaly.free.simplified)).tolist()
-
-def all_sol_for_n(n):
-  sol = [] 
-  sol += [anomalyparimpar(n) for i in range(4000000)]
-  final = [i for i in sol if i[0] is not None]
-  return final
-
-
 
 
 if __name__ == '__main__':  #En el main se guardan todas las funciones para que el programa consulte
