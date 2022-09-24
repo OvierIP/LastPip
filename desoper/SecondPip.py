@@ -70,7 +70,7 @@ if __name__ == '__main__':  #En el main se guardan todas las funciones para que 
     Hello main
     '''
     hello()
-    exponente(m)
-    exponente1(m)
-    anomalyparimpar(n)
-    all_sol_for_n(n)
+    #exponente(m)
+    #exponente1(m)
+    #anomalyparimpar(n)
+    #all_sol_for_n(n)
