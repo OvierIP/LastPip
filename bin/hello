@@ -1,32 +1,59 @@
 #!/usr/bin/env python3
-# programa arparseg su funcion es capturar la informacion ingresada por el usuario desde  desde la terminal 
-#######################################
-#program name --N=500000 --m=9 --zmax=30 --imax=0 --output_name='solution' 6
-#######################################
 
-from typing_extensions import Type
-
-# Import the library
-#from desoper import abc123# debo importar funciones del archivo pc 
 import argparse
 import sys 
 def iniciar():
 
     parser = argparse.ArgumentParser(description='argumentos de pedida del programa')
 
-    # entrada argumento numero 1 
-    parser.add_argument('-N', '--numlist',type= int,default=500000,required=True,help='espacio de listas de posibles repuestas')
-    # entrada argumento numero 2 
-    parser.add_argument('-m', '--magnitud',type=int,default=1,required=True,help='agregue enteros mayores que 1 hasta que obtenga soluciones completas ')
-    # entrada argumento numero 3 
-    parser.add_argument('-zmax', '--zmaximo',type=int,default=30,required=False,help='valor del zmaximo')
-    # entrada argumento numero 4 
-    parser.add_argument('-imax', '--imaximo',type=int,default=0, required=False, help='valor de iteraciones hechas para recoorre el espacio de posibñes respuestas')
-    # entrada argumento numero 5
-    parser.add_argument('-n', '--number',type=int,default=5,required=True,action='store',help='entero para que es la dimension de z ')
+    parser.add_argument(
+        'n', 
+        'number',
+        type=int,
+        default=5,
+        required=True,
+        action='store',
+        help='número de valores de z para cada solución',
+    )
+    
+    parser.add_argument(
+        '-N', 
+        '--numlist',
+        type= int,
+        required=False,
+        help='número de vectores l y k',
+    )
+    
+    parser.add_argument(
+        '-m', 
+        '--magnitud',
+        type=int,
+        default=1,
+        required=False,
+        help='máximo (mínimo) valor que l (k) puede tomar',
+    )
+   
+    parser.add_argument(
+        '-zmax', 
+        '--zmaximo',
+        type=int,
+        required=False
+        actio='store'
+        help='máximo (mínimo) valor que l (k) puede tomar',
+    )
+    
+    parser.add_argument(
+        '-imax', 
+        '--imaximo',
+        type=int,
+        default=0, 
+        required=False, 
+        help='valor máximo de iteraciones para hallar las soluciones'
+    )
+    
 
     args = parser.parse_args()
-    return args
+    
 
 def main(args): 
   
@@ -35,7 +62,10 @@ def main(args):
   return  print(a) 
  
 if __name__ == '__main__': 
-    args=iniciar()
-    main(args)
-
-   
+    inputs = {
+        "n": 5,
+        "m": 6,
+        "N": 500000,
+        "zmax": 30,
+        "imax": 0,
+    }
