@@ -1,41 +1,41 @@
-!/usr/bin/env python3
-# programa arparseg su funcion es capturar la informacion desde la terminal 
+#!/usr/bin/env python3
+# programa arparseg su funcion es capturar la informacion ingresada por el usuario desde  desde la terminal 
 #######################################
 #program name --N=500000 --m=9 --zmax=30 --imax=0 --output_name='solution' 6
 #######################################
 
 from typing_extensions import Type
-# programa inicial de examen  
+
 # Import the library
-from desoper import SecondPip #debo importar funciones del archivo pc 
+#from desoper import abc123# debo importar funciones del archivo pc 
 import argparse
-parser = argparse.ArgumentParser(
-          description='argumentos de pedida del programa 
-          ')
+import sys 
+def iniciar():
 
+    parser = argparse.ArgumentParser(description='argumentos de pedida del programa')
 
-# entrada argumento numero 1 
-#parser.add_argument('--N', '--numlist',Type='int',default=500000,required=True,help='espacio de listas de posibles repuestas')
-# entrada argumento numero 2 
-parser.add_argument('--m', '--magnitud',Type="int",default=1,required=True,help='agregue enteros mayores que 1 hasta que obtenga soluciones completas ')
-# entrada argumento numero 3 
-#parser.add_argument('--zmax', '--zmaximo',Type='int',default=30,required=False,help='valor del zmaximo')
-# entrada argumento numero 4 
-#parser.add_argument('--imax', '--imaximo',Type='int',default=0, required=False, help='valor de iteraciones hechas para recoorre el espacio de posibñes respuestas')
-# entrada argumento numero 5
-parser.add_argument('--n', '--number',Type='int',default=5,required=True,action="store_true",help='entero para que es la dimension de z ')
+    # entrada argumento numero 1 
+    parser.add_argument('-N', '--numlist',type= int,default=500000,required=True,help='espacio de listas de posibles repuestas')
+    # entrada argumento numero 2 
+    parser.add_argument('-m', '--magnitud',type=int,default=1,required=True,help='agregue enteros mayores que 1 hasta que obtenga soluciones completas ')
+    # entrada argumento numero 3 
+    parser.add_argument('-zmax', '--zmaximo',type=int,default=30,required=False,help='valor del zmaximo')
+    # entrada argumento numero 4 
+    parser.add_argument('-imax', '--imaximo',type=int,default=0, required=False, help='valor de iteraciones hechas para recoorre el espacio de posibñes respuestas')
+    # entrada argumento numero 5
+    parser.add_argument('-n', '--number',type=int,default=5,required=True,action='store',help='entero para que es la dimension de z ')
 
-args = parser.parse_args()
-if __name__ == '__main__':Backup
-    #print(abc123.hello())
-    #a = abc123.funcion_recibe_valueN()# importamos las funciones 
-    b = SecondPip.exponente(m)
-    #cBackup = abc123.funcion_recibe_value_zmax
-    #d = abc123.fuBackupncion_recibe_valueimax   
-    e = SecondPip.anomalyparimpar(n)
-    f = SecondPip.exponente1(m)
-    if args.number:
-         print(b,e,f)
-    else:
-      print("importante ingresar un numero n") 
-    
+    args = parser.parse_args()
+    return args
+
+def main(args): 
+  
+  if args.number:
+      a=args.number*3
+  return  print(a) 
+ 
+if __name__ == '__main__': 
+    args=iniciar()
+    main(args)
+
+   
