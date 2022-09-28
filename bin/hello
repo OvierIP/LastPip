@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from typing_extensions import Type
+#from typing_extensions import Type
 import argparse
 import sys 
 def iniciar():
@@ -19,7 +19,8 @@ def iniciar():
         '-N', 
         type= int,
         default=100000,
-        required=False,
+        required=True,
+        action='store',
         help='número de vectores l y k',
     )
     
@@ -27,7 +28,8 @@ def iniciar():
         '-m', 
         type=int,
         default=6,
-        required=False,
+        required=True,
+        action='store',
         help='máximo (mínimo) valor que l (k) puede tomar',
     )
    
@@ -35,16 +37,16 @@ def iniciar():
         '-zmax', 
         type=int,
         default=30,
-        required=False,
-        action='store'
-        help='máximo (mínimo) valor que l (k) puede tomar',
+        required=True,
+        action='store',
+        help='máximo (mínimo) valor que z puede tomar',
     )
     
     parser.add_argument(
         '-imax', 
         type=int,
         default=0, 
-        required=False, 
+        required=True, 
         action='store',
         help='valor máximo de iteraciones para hallar las soluciones'
     )
@@ -56,24 +58,24 @@ def iniciar():
 def main(args): 
   
   if args.n:
-      a=args.number*2
-  return  print(a) 
+      a=args.n*2
+  #return  print(a) 
 
   if args.N:
-      a=args.number*3
-  return  print(a) 
+      b=args.N*3
+  #return  print(b) 
 
   if args.m:
-      a=args.number*4
-  return  print(a) 
+      c=args.m*4
+  #return  print(c) 
 
   if args.zmax:
-      a=args.number*5
-  return  print(a) 
+      d=args.zmax*5
+  #return  print(d) 
 
   if args.imax:
-      a=args.number*6
-  return  print(a) 
+      e=args.imax*6
+  return  print(a,b,c,d,e) 
 
  
 if __name__ == '__main__': 
