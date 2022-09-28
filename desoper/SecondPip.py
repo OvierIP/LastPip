@@ -64,13 +64,18 @@ def anomalyparimpar(n): #Este método halla una solución final Z para n par o i
     else:
       return (np.sort(anomaly.free.simplified)).tolist()
 
+def all_sol_for_n(n):
+  sol = [] 
+  sol += [anomalyparimpar(n) for i in range(5000000)]
+  final = [i for i in sol if i[0] is not None]
+  return final
 
-if __name__ == '__main__':  #En el main se guardan todas las funciones para que el programa consulte
-    r'''
-    Hello main
-    '''
-    hello()
-    exponente(m)
-    exponente1(m)
-    anomalyparimpar(n)
-    all_sol_for_n(n)
+from multiprocessing import Pool
+n = int(input("Por favor ingrese el valor de n que sea mayor que 4; "))
+resultados = Pool().map(all_sol_for_n, list(range(n,n+1)))
+
+df=pd.DataFrame(resultados)
+df=df.T
+df=df.astype(str)
+df.drop_duplicates().reset_index(drop=True)
+
