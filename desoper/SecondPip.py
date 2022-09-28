@@ -3,6 +3,7 @@ r'''
 SecondPip module
 '''
 #pip install anomalies
+import os
 import numpy as np 
 import pandas as pd
 import random
@@ -10,14 +11,8 @@ import pandas as pd
 from multiprocessing import Pool
 import itertools
 from anomalies import anomaly
-import time
+#import time
 from itertools import permutations
-
-def hello():
-    r'''
-    Hello function
-    '''
-    return 'Hello, World!'
 
 def exponente(m):
     exp=(-1)**np.random.randint(0,2, size=m)   #la función exponente evita soluciones triviales o ceros 
