@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
-
+from typing_extensions import Type
 import argparse
 import sys 
 def iniciar():
 
-    parser = argparse.ArgumentParser(description='argumentos de pedida del programa')
+    parser = argparse.ArgumentParser(description='Parámetros de SecondPip')
 
     parser.add_argument(
-        'n', 
-        'number',
+        '-n', 
         type=int,
         default=5,
         required=True,
@@ -18,54 +17,67 @@ def iniciar():
     
     parser.add_argument(
         '-N', 
-        '--numlist',
         type= int,
+        default=100000,
         required=False,
         help='número de vectores l y k',
     )
     
     parser.add_argument(
         '-m', 
-        '--magnitud',
         type=int,
-        default=1,
+        default=6,
         required=False,
         help='máximo (mínimo) valor que l (k) puede tomar',
     )
    
     parser.add_argument(
         '-zmax', 
-        '--zmaximo',
         type=int,
-        required=False
-        actio='store'
+        default=30,
+        required=False,
+        action='store'
         help='máximo (mínimo) valor que l (k) puede tomar',
     )
     
     parser.add_argument(
         '-imax', 
-        '--imaximo',
         type=int,
         default=0, 
         required=False, 
+        action='store',
         help='valor máximo de iteraciones para hallar las soluciones'
     )
     
 
     args = parser.parse_args()
-    
+    return args
 
 def main(args): 
   
-  if args.number:
+  if args.n:
+      a=args.number*2
+  return  print(a) 
+
+  if args.N:
       a=args.number*3
   return  print(a) 
+
+  if args.m:
+      a=args.number*4
+  return  print(a) 
+
+  if args.zmax:
+      a=args.number*5
+  return  print(a) 
+
+  if args.imax:
+      a=args.number*6
+  return  print(a) 
+
  
 if __name__ == '__main__': 
-    inputs = {
-        "n": 5,
-        "m": 6,
-        "N": 500000,
-        "zmax": 30,
-        "imax": 0,
-    }
+    args=iniciar()
+    main(args)
+    
+   
