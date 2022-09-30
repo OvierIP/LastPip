@@ -81,5 +81,6 @@ def solutionfinal(n,m,imax,zmax,N):
         if d_size>0:
             size_old=df.shape[0]
         if i>=imax:
+            
             break
     return df    
