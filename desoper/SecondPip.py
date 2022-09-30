@@ -51,7 +51,7 @@ def get_solution_from_list(lk,zmax=zmax):
     k=lk[n//2:]
     return get_solution(l,k,zmax)
 
-def principal(n,m,imax,zmax,N):
+def solutionfinal(n,m,imax,zmax,N):
 
     df=pd.DataFrame()
 
