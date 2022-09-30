@@ -15,17 +15,48 @@ def iniciar():
 
     parser = argparse.ArgumentParser(description='argumentos de pedida del programa')
 
-    # entrada argumento numero 1 
-    parser.add_argument('-N', '--numlist',type= int,default=500000,required=False,help='espacio de listas de posibles repuestas')
-    # entrada argumento numero 2 
-    parser.add_argument('-m', '--magnitud',type=int,default=1,required=False,help='agregue enteros mayores que 1 hasta que obtenga soluciones completas ')
-    # entrada argumento numero 3 
-    parser.add_argument('-zmax', '--zmaximo',type=int,default=30,required=False,help='valor del zmaximo')
-    # entrada argumento numero 4 
-    parser.add_argument('-imax', '--imaximo',type=int,default=0, required=False, help='valor de iteraciones hechas para recoorre el espacio de posibñes respuestas')
-    # entrada argumento numero 5
-    parser.add_argument('-n', '--number',type=int,default=5,required=True,action='store',help='entero para que es la dimension de z ')
-    # argumento de guardado de archivo
+   
+    parser.add_argument(
+        '-N', 
+        type= int,
+        default=500000,
+        required=False,
+        help='espacio de parámetros'
+    )
+    
+    parser.add_argument(
+        '-m', 
+        type=int,
+        default=1,
+        required=False,
+        help='agregue enteros mayores que 1 hasta que obtenga soluciones completas '
+    )
+     
+    parser.add_argument(
+        '-zmax', 
+        type=int,
+        default=30,
+        required=False,
+        help='valor máximo en las soluciones'
+    )
+    
+    parser.add_argument(
+        '-imax',
+        type=int,
+        default=0, 
+        required=False, 
+        help='valor de iteraciones hechas para recorrer el espacio de posibles respuestas'
+    )
+   
+    parser.add_argument(
+        '-n', 
+        type=int,
+        default=5,
+        required=True,
+        action='store',
+        help='entero para que es la dimension de z'
+    )
+    
     
     parser.add_argument('-w', '--output_name',type=str,default="solution",required=False,action='store',help='entero para que es la dimension de z ')
     
