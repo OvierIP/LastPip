@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # coding: utf-8
 
-
 # Copyright (c) Colav.
 # Distributed under the terms of the Modified BSD License.
 
@@ -29,7 +28,6 @@ if os.name in ('nt', 'dos'):
     shell = True
     warning = "WARNING: Windows is not officially supported"
     print(warning, file=sys.stderr)
-
 
 def main():
     setup(
