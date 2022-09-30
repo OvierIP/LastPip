@@ -5,56 +5,52 @@
 #######################################
 
 from typing_extensions import Type
-
-# Import the library
-#from desoper import abc123# debo importar funciones del archivo pc 
 import argparse
-#from desoper.myfirstpypi import principal 
 import sys 
 def iniciar():
 
     parser = argparse.ArgumentParser(description='argumentos de pedida del programa')
 
-   
-    parser.add_argument(
-        '-N', 
-        type= int,
-        default=500000,
-        required=False,
-        help='espacio de parámetros'
-    )
-    
-    parser.add_argument(
-        '-m', 
-        type=int,
-        default=1,
-        required=False,
-        help='agregue enteros mayores que 1 hasta que obtenga soluciones completas '
-    )
-     
-    parser.add_argument(
-        '-zmax', 
-        type=int,
-        default=30,
-        required=False,
-        help='valor máximo en las soluciones'
-    )
-    
-    parser.add_argument(
-        '-imax',
-        type=int,
-        default=0, 
-        required=False, 
-        help='valor de iteraciones hechas para recorrer el espacio de posibles respuestas'
-    )
-   
     parser.add_argument(
         '-n', 
         type=int,
         default=5,
         required=True,
         action='store',
-        help='entero para que es la dimension de z'
+        help='número de valores para cada solución'
+    )    
+   
+    parser.add_argument(
+        '-m', 
+        type=int,
+        default=1,
+        required=False,
+        help='valores que l o k puede tomar'
+    )
+     
+ 
+    parser.add_argument(
+        '-imax',
+        type=int,
+        default=0, 
+        required=False, 
+        help='máximo de iteraciones para encontrar las soluciones'
+    )
+   
+    parser.add_argument(
+        '-zmax', 
+        type=int,
+        default=30,
+        required=False,
+        help='valor máximo que z puede tomar'
+    )
+
+    parser.add_argument(
+        '-N', 
+        type= int,
+        default=500000,
+        required=False,
+        help='espacio de parámetros para hallar soluciones'
     )
     
     
@@ -67,10 +63,10 @@ def main(args):
   
   if args.number:
       
-      c=principal(args.number,args.magnitud,args.imaximo,args.zmaximo,args.numlist)
-      c.to_json(args.output_name+'.json',orient='records')
+      s=principal(args.number,args.magnitud,args.imaximo,args.zmaximo,args.numlist)
+      s.to_json(args.output_name+'.json',orient='records')
         
-  return  print(c) 
+  return  print(s) 
  
 if __name__ == '__main__': 
     args=iniciar()
