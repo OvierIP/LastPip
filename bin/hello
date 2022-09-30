@@ -3,7 +3,6 @@
 #######################################
 #program name --N=500000 --m=9 --zmax=30 --imax=0 --output_name='solution' 6
 #######################################
-
 from typing_extensions import Type
 import argparse
 import sys 
@@ -28,8 +27,7 @@ def iniciar():
         help='valores que l o k puede tomar'
     )
      
- 
-    parser.add_argument(
+     parser.add_argument(
         '-imax',
         type=int,
         default=0, 
