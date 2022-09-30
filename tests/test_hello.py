@@ -1,6 +1,6 @@
 import unittest
 import pandas as pd
-from desoper.myfirstpypi import principal 
+from desoper.SecondPip import principal 
 
 #test base
 
