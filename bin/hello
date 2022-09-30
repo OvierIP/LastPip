@@ -16,15 +16,15 @@ def iniciar():
         default=5,
         required=True,
         action='store',
-        help='número de valores para cada solución'
+        help='número de valores para cada solución mayores que 4'
     )    
    
     parser.add_argument(
         '-m', 
         type=int,
         default=1,
-        required=False,
-        help='valores que l o k puede tomar'
+        required=True,
+        help='valores positivos que l o k puede tomar'
     )
      
      parser.add_argument(
@@ -39,7 +39,7 @@ def iniciar():
         '-zmax', 
         type=int,
         default=30,
-        required=False,
+        required=True,
         help='valor máximo que z puede tomar'
     )
 
