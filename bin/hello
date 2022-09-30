@@ -63,7 +63,7 @@ def main(args):
   
   if args.number:
       
-      s=principal(args.number,args.magnitud,args.imaximo,args.zmaximo,args.numlist)
+      s=solutionfinal(args.number,args.magnitud,args.imaximo,args.zmaximo,args.numlist)
       s.to_json(args.output_name+'.json',orient='records')
         
   return  print(s) 
