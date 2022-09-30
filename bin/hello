@@ -23,7 +23,7 @@ def iniciar():
         '-m', 
         type=int,
         default=1,
-        required=True,
+        required=False,
         help='valores positivos que l o k puede tomar'
     )
      
