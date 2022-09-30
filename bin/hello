@@ -1,85 +1,47 @@
 #!/usr/bin/env python3
-#from typing_extensions import Type
+# programa arparseg su funcion es capturar la informacion ingresada por el usuario desde  desde la terminal 
+#######################################
+#program name --N=500000 --m=9 --zmax=30 --imax=0 --output_name='solution' 6
+#######################################
+
+from typing_extensions import Type
+
+# Import the library
+#from desoper import abc123# debo importar funciones del archivo pc 
 import argparse
+#from desoper.myfirstpypi import principal 
 import sys 
 def iniciar():
 
-    parser = argparse.ArgumentParser(description='Parámetros de SecondPip')
+    parser = argparse.ArgumentParser(description='argumentos de pedida del programa')
 
-    parser.add_argument(
-        '-n', 
-        type=int,
-        default=5,
-        required=True,
-        action='store',
-        help='número de valores de z para cada solución',
-    )
+    # entrada argumento numero 1 
+    parser.add_argument('-N', '--numlist',type= int,default=500000,required=False,help='espacio de listas de posibles repuestas')
+    # entrada argumento numero 2 
+    parser.add_argument('-m', '--magnitud',type=int,default=1,required=False,help='agregue enteros mayores que 1 hasta que obtenga soluciones completas ')
+    # entrada argumento numero 3 
+    parser.add_argument('-zmax', '--zmaximo',type=int,default=30,required=False,help='valor del zmaximo')
+    # entrada argumento numero 4 
+    parser.add_argument('-imax', '--imaximo',type=int,default=0, required=False, help='valor de iteraciones hechas para recoorre el espacio de posibñes respuestas')
+    # entrada argumento numero 5
+    parser.add_argument('-n', '--number',type=int,default=5,required=True,action='store',help='entero para que es la dimension de z ')
+    # argumento de guardado de archivo
     
-    parser.add_argument(
-        '-N', 
-        type= int,
-        default=100000,
-        required=True,
-        action='store',
-        help='número de vectores l y k',
-    )
+    parser.add_argument('-w', '--output_name',type=str,default="solution",required=False,action='store',help='entero para que es la dimension de z ')
     
-    parser.add_argument(
-        '-m', 
-        type=int,
-        default=6,
-        required=True,
-        action='store',
-        help='máximo (mínimo) valor que l (k) puede tomar',
-    )
-   
-    parser.add_argument(
-        '-zmax', 
-        type=int,
-        default=30,
-        required=True,
-        action='store',
-        help='máximo (mínimo) valor que z puede tomar',
-    )
-    
-    parser.add_argument(
-        '-imax', 
-        type=int,
-        default=0, 
-        required=True, 
-        action='store',
-        help='valor máximo de iteraciones para hallar las soluciones'
-    )
-    
-
     args = parser.parse_args()
     return args
 
 def main(args): 
   
-  if args.n:
-      a=args.n*2
-  #return  print(a) 
-
-  if args.N:
-      b=args.N*3
-  #return  print(b) 
-
-  if args.m:
-      c=args.m*4
-  #return  print(c) 
-
-  if args.zmax:
-      d=args.zmax*5
-  #return  print(d) 
-
-  if args.imax:
-      e=args.imax*6
-  return  print(a,b,c,d,e) 
-
+  if args.number:
+      
+      c=principal(args.number,args.magnitud,args.imaximo,args.zmaximo,args.numlist)
+      c.to_json(args.output_name+'.json',orient='records')
+        
+  return  print(c) 
  
 if __name__ == '__main__': 
     args=iniciar()
     main(args)
-    
-   
+
