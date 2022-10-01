@@ -54,6 +54,7 @@ def iniciar():
     
     parser.add_argument('-w', '--output_name',type=str,default="solution",required=False,action='store',help='entero para que es la dimension de z ')
     
+    sys.stdout.write(str(solutionfinal(args)))
     args = parser.parse_args()
     return args
 
@@ -61,12 +62,13 @@ def main(args):
   
   if args.number:
       
-      s=solutionfinal(args.number,args.magnitud,args.imaximo,args.zmaximo,args.numlist)
+      s=solutionfinal(args.n,args.m,args.imax,args.zmax,args.N)
       s.to_json(args.output_name+'.json',orient='records')
         
   return  print(s) 
  
 if __name__ == '__main__': 
+    
     args=iniciar()
     main(args)
 
