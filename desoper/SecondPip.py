@@ -1,86 +1,71 @@
-#!/usr/bin/env python3
-import dask.array as da
+import numpy as np 
+import pandas as pd
+import random
 import pandas as pd
 from multiprocessing import Pool
-from multiprocessing import cpu_count
-import os
-import numpy as np
 import itertools
-import sys
 from anomalies import anomaly
-import numpy as np
 import time
-import warnings
-warnings.filterwarnings("ignore")
-global zmax
-zmax=32
+from itertools import permutations
 
-z=anomaly.free
+def exponente(m):
+  exp=(-1)**np.random.randint(0,2, size=m)   #la función exponente evita soluciones triviales o ceros 
+  return exp
 
-def _get_chiral(q,q_max=np.inf):
-    #Normalize to positive minimum
-    if 0 in q:
-        #q=q[q!=0]
-        return None,None
-    if q.size==0:
-        return None,None
-    if q[0]<0:
-        q=-q
-    #Divide by GCD
-    GCD=np.gcd.reduce(q)
-    q=(q/GCD).astype(int)
-    if ( #not 0 in z and 
-          0 not in [ sum(p) for p in itertools.permutations(q, 2) ] and #avoid vector-like and multiple 0's
-          np.abs(q).max()<=q_max
-           ):
-        return q,GCD
+def exponente1(m):
+  exp1=(-1)**np.random.randint(0,2, size=m+1)
+  return exp1
+
+def anomalyparimpar(n): #Este método halla una solución final Z para n par o impar; los ordena y los convierte en una tupla ascendente.
+  if n % 2 == 0:        
+
+    m=int(n/2-1)   
+    l1 = np.random.randint(1, 19, size=m)*exponente(m) 
+    k1 = np.random.randint(1, 19, size=m)*exponente(m) 
+    l2 = l1[:m] 
+    k2 = k1[:m]
+    anomaly.free(l2,k2), anomaly.free.gcd, anomaly.free.simplified
+    if 0 in anomaly.free.simplified:         
+      return [None]
+    if max(abs(anomaly.free.simplified))>30:
+      return [None]
+    if anomaly.free.simplified[0]<0:
+      anomaly.free.simplified = -anomaly.free.simplified
+    if ( 0 in [ sum(p) for p in itertools.permutations(anomaly.free.simplified, 2) ]): 
+      return [None]
     else:
-        return None,None
-    
-def get_solution(l,k,zmax=zmax):
-    q,gcd=_get_chiral( z(l,k) )
-    #if q is not None and np.abs(q).max()<=zmax:#
-    if q is not None and np.abs(q).max()<=zmax:
-        return {'l':l,'k':k,'z':list(q),'gcd':gcd}
+      return (np.sort(anomaly.free.simplified)).tolist()
+
+  else: 
+    m=int((n-3)/2)
+    l1 = np.random.randint(1, 19, size=m)*exponente(m) 
+    k1 = np.random.randint(1, 19, size=m+1)*exponente1(m) 
+    l2 = l1[:m] 
+    k2 = k1[:m+1]
+    anomaly.free(l2,k2), anomaly.free.gcd, anomaly.free.simplified
+    if 0 in anomaly.free.simplified:
+      return [None]
+    if anomaly.free.simplified[0]<0:
+      anomaly.free.simplified = -anomaly.free.simplified
+    if max(abs(anomaly.free.simplified))>30:
+      return [None]
+    if ( 0 in [ sum(p) for p in itertools.permutations(anomaly.free.simplified, 2) ]): 
+      return [None]
     else:
-        return {}    
-    
-def get_solution_from_list(lk,zmax=zmax):
-    n=len(lk)
-    l=lk[:n//2]
-    k=lk[n//2:]
-    return get_solution(l,k,zmax)
+      return (np.sort(anomaly.free.simplified)).tolist()
 
-def solutionfinal(n,m,imax,zmax,N):
+def all_sol_for_n(n):
+  sol = [] 
+  sol += [anomalyparimpar(n) for i in range(500000)]
+  final = [i for i in sol if i[0] is not None]
+  return final
 
-    df=pd.DataFrame()
-
-    long =(2*m+1)**(n-2)
-    size_old =0
-    i=0 
-    d_size=1
-    while d_size>0:
-        ll=da.random.randint(-m,m+1,(N,n-2))
-        ll=ll.to_dask_dataframe().drop_duplicates().to_dask_array()
-        ll=ll.compute()
-        s=time.time()
-        pool = Pool(cpu_count())
-
-        sls = pool.map(get_solution_from_list,ll)
-         
-        pool.close()
-        del ll
-
-        sls=[d for d in sls if d]
-        df=df.append(  sls,ignore_index=True    )
-
-        df.sort_values('gcd')
-        df['zs']=df['z'].astype(str)
-        df=df.drop_duplicates('zs').drop('zs',axis='columns').reset_index(drop=True)
-        d_size=df.shape[0]-size_old
-        if d_size>0:
-            size_old=df.shape[0]
-        if i>=imax:
-            
-            break
-    return df    
+def solutionfinal(n):
+  from multiprocessing import Pool
+  resultados = Pool().map(all_sol_for_n, list(range(n,n+1)))
+  df=pd.DataFrame(resultados)
+  df=df.T
+  df=df.astype(str)
+  df=df.drop_duplicates().reset_index(drop=True)
+  df
+  return df
