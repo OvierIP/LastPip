@@ -48,7 +48,7 @@ def main():
         include_package_data=True,
 
         # Details
-        url="https://https://github.com/OvierI/SecondPip",
+        url="https://https://github.com/OvierIP/lastpip",
         scripts=['bin/hello'],
 
         license="BSD",
