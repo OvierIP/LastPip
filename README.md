@@ -1,13 +1,13 @@
-## Paquete SecondPip
+## Paquete LastPip
 
 Este paquete soluciona ecuaciones diofantinas como se adjunta en el siguiente documento DOI: 10.1103/PhysRevLett.123.151601
 
 ## Instalación
-Por favor instale el paquete anomalies y el paquete SecondPip.
+Por favor instale el paquete anomalies y el paquete LastPip.
 ```bash
 $ pip install anomalies
+$ falta lastpip después de release
 
-$ pip install -i https://test.pypi.org/simple/ SecondPip
 ```
 ## Librerías necesarias
 ```bash
@@ -19,4 +19,4 @@ $ pip install -i https://test.pypi.org/simple/ SecondPip
 ```
 
 ## Autor
-[OvierI](https://github.com/OvierI)
+[OvierIP](https://github.com/OvierIP)
