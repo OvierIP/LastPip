@@ -1,24 +1,24 @@
-# Template for GitHub actions for DevOps
+# Paquete SecondPip
 
-![Python package](https://github.com/restrepo/DevOps/workflows/Python%20package/badge.svg)
-![Upload Python Package](https://github.com/restrepo/DevOps/workflows/Upload%20Python%20Package/badge.svg)
+$ pip install -i https://test.pypi.org/simple/ SecondPip
 
-The related software just print `Hello World!`. To avoid conflicts with the package name, we use the Spanish translation _DesOper_
+Este paquete soluciona ecuaciones diofantinas como se adjunta en el siguiente documento DOI: 10.1103/PhysRevLett.123.151601
 
-## Install
+## Instalación
+Por favor instale el paquete anomalies y el paquete SecondPip.
 ```bash
-$ pip install -i https://test.pypi.org/simple/ desoper
+$ pip install -i https://test.pypi.org/simple/ Anomalies-free-solutions
+```bash
+
 ```
-## USAGE
-```python
->>> from desoper import hello
->>> hello.hello()
-Hello World!
-```
-Links:
-* [Test pip page](https://test.pypi.org/project/desoper/)
-* Flake8 Tool For Style Guide Enforcement
-  * https://flake8.pycqa.org/ 
-  * https://peps.python.org/pep-0008/
-* [Test python code](https://docs.pytest.org/en/7.1.x/)
-* [GitHub actions](https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions)
+## Librerías necesarias
+```bash
+
+- [Numpy](https://numpy.org/)
+- [Pandas](https://pandas.pydata.org/)
+- [Dask](https://www.dask.org/)
+
+```bash
+
+## Autor
+[OvierI](https://github.com/OvierI)
