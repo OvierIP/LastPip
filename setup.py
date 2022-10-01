@@ -32,14 +32,14 @@ if os.name in ('nt', 'dos'):
 def main():
     setup(
         # Application name:
-        name="SecondPip",
+        name="LastPip",
 
         # Version number (initial):
-        version="0.0.7",
+        version="0.0.1",
 
         # Application author details:
-        author="Ovier",
-        author_email="ovier.izquierdop@udea.edu.co",
+        author="OvierIP",
+        author_email="ovierizquierdop@iejuanxxiiimedellin.edu.co",
 
         # Packages
         packages=find_packages(exclude=['tests']),
@@ -53,7 +53,7 @@ def main():
 
         license="BSD",
 
-        description="Este paquete soluciona ecuaciones diofantinas",
+        description="Este paquete soluciona ecuaciones diofantinasHP",
 
         long_description=open("README.md").read(), # El Readme muestra qué paquetes instalas y los métodos dentro del paquete. Y los links sugeridos
 
