@@ -5,7 +5,7 @@ Este paquete soluciona ecuaciones diofantinas como se adjunta en el siguiente do
 ## Instalación
 Por favor instale el paquete anomalies y el paquete SecondPip.
 ```bash
-$ pip install -i https://test.pypi.org/simple/ Anomalies-free-solutions
+$ pip install anomalies
 
 $ pip install -i https://test.pypi.org/simple/ SecondPip
 ```
