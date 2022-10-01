@@ -54,8 +54,9 @@ def iniciar():
     
     parser.add_argument('-w', '--output_name',type=str,default="solution",required=False,action='store',help='entero para que es la dimension de z ')
     
-    sys.stdout.write(str(solutionfinal(args)))
+    
     args = parser.parse_args()
+    sys.stdout.write(str(solutionfinal(args)))
     return args
 
 def main(args): 
