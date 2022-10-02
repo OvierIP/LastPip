@@ -19,7 +19,7 @@ def iniciar():
         help='número de valores para cada solución mayores que 4'
     )    
          
-    #parser.add_argument('Solucion',type=str,default="solucion",required=False,action='store',help='almacene los resultados del dataframe')
+    parser.add_argument('Solucion',type=str,default="solucion",required=False,action='store',help='almacene los resultados del dataframe')
         
     args = parser.parse_args()
     sys.stdout.write(str(solutionfinal(args)))
@@ -27,10 +27,10 @@ def iniciar():
 
 def main(args): 
   
-  if args.number:
+  if args.n:
       
       s=solutionfinal(args.n)
-      #s.to_json('args.Solucion.json',orient='records')
+      s.to_csv('args.solucion.csv',index='False')
         
   return  print(s) 
  
