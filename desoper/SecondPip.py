@@ -8,6 +8,7 @@ from anomalies import anomaly
 import time
 from itertools import permutations
 
+
 def exponente(m):
   exp=(-1)**np.random.randint(0,2, size=m)   #la función exponente evita soluciones triviales o ceros 
   return exp
