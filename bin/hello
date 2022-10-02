@@ -7,7 +7,7 @@ from typing_extensions import Type
 import argparse
 import sys 
 def iniciar():
-
+    
     parser = argparse.ArgumentParser(description='argumentos de pedida del programa')
 
     parser.add_argument(
@@ -18,43 +18,9 @@ def iniciar():
         action='store',
         help='número de valores para cada solución mayores que 4'
     )    
-   
-    parser.add_argument(
-        '-m', 
-        type=int,
-        default=1,
-        required=False,
-        help='valores positivos que l o k puede tomar'
-    )
-     
-     parser.add_argument(
-        '-imax',
-        type=int,
-        default=0, 
-        required=False, 
-        help='máximo de iteraciones para encontrar las soluciones'
-    )
-   
-    parser.add_argument(
-        '-zmax', 
-        type=int,
-        default=30,
-        required=True,
-        help='valor máximo que z puede tomar'
-    )
-
-    parser.add_argument(
-        '-N', 
-        type= int,
-        default=500000,
-        required=False,
-        help='espacio de parámetros para hallar soluciones'
-    )
-    
-    
-    parser.add_argument('-w', '--output_name',type=str,default="solution",required=False,action='store',help='entero para que es la dimension de z ')
-    
-    
+         
+    #parser.add_argument('Solucion',type=str,default="solucion",required=False,action='store',help='almacene los resultados del dataframe')
+        
     args = parser.parse_args()
     sys.stdout.write(str(solutionfinal(args)))
     return args
@@ -63,8 +29,8 @@ def main(args):
   
   if args.number:
       
-      s=solutionfinal(args.n,args.m,args.imax,args.zmax,args.N)
-      s.to_json(args.output_name+'.json',orient='records')
+      s=solutionfinal(args.n)
+      #s.to_json('args.Solucion.json',orient='records')
         
   return  print(s) 
  
