@@ -9,6 +9,13 @@ $ pip install anomalies
 $ falta lastpip después de release
 
 ```
+
+## Implementación
+```bash
+Last.Pip.solutionfinal(5);
+donde  se considera n=5
+```
+
 ## Librerías necesarias
 ```bash
 
