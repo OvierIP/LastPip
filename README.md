@@ -12,7 +12,7 @@ $ pip install -i https://test.pypi.org/simple/ LastPip
 
 ## Implementación
 ```bash
-Last.Pip.solutionfinal(5);
+LastPip.solutionfinal(5);
 donde  se considera n=5
 ```
 
