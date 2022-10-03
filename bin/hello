@@ -8,7 +8,7 @@ import argparse
 import sys 
 def iniciar():
     
-    parser = argparse.ArgumentParser(description='argumentos de pedida del programa')
+    parser = argparse.ArgumentParser(description='Parámetros de LastPip')
 
     parser.add_argument(
         '-n', 
