@@ -6,7 +6,7 @@ Este paquete soluciona ecuaciones diofantinas como se adjunta en el siguiente do
 Por favor instale el paquete anomalies y el paquete LastPip.
 ```bash
 $ pip install anomalies
-$ falta lastpip después de release
+$ pip install -i https://test.pypi.org/simple/ LastPip
 
 ```
 
